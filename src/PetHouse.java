@@ -3,7 +3,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PetHouse implements Serializable {
+
     private static final long serialVersionUID = 1L;
+
     private List<Cat> cats;
     private final String address;
     private final int year;
@@ -60,4 +62,5 @@ public class PetHouse implements Serializable {
                 ", year=" + year +
                 '}';
     }
+
 }

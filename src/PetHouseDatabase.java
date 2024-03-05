@@ -4,8 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class PetHouseDatabase implements Serializable {
+
     @Serial
     private static final long serialVersionUID = 1L;
+
     private Map<String, PetHouse> petHouses;
 
     public PetHouseDatabase() {
