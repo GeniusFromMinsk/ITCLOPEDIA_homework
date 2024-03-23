@@ -88,4 +88,27 @@ public class CatService {
         System.out.println(catInfo);
     }
 
+    public void editCatInfo(Scanner scanner, PetHouseDatabase petHouseDatabase) {
+        System.out.println("Введите название питомника, из которого вы хотите редактировать информацию о коте:");
+        String petHouseName = scanner.nextLine();
+        PetHouse petHouse = petHouseDatabase.getPetHouse(petHouseName);
+        if (petHouse == null) {
+            System.out.println("Питомника с названием '" + petHouseName + "' не существует");
+            return;
+        }
+
+        System.out.println("Введите имя кота, информацию о котором вы хотите редактировать:");
+        String catName = scanner.nextLine();
+        Cat catToEdit = petHouse.findCatByName(catName);
+        if (catToEdit == null) {
+            System.out.println("Кот с именем '" + catName + "' не найден в питомнике '" + petHouseName + "'");
+            return;
+        }
+
+        System.out.println("Введите новое имя для кота:");
+        String newCatName = scanner.nextLine();
+        catToEdit.setName(newCatName);
+        System.out.println("Имя кота успешно изменено на '" + newCatName + "'");
+    }
+
 }

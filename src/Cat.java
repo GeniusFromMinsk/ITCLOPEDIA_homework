@@ -16,6 +16,10 @@ public class Cat implements Serializable {
         return name;
     }
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
     @Override
     public String toString() {
         return "Cat{" +
