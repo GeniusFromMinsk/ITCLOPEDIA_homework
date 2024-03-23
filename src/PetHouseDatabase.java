@@ -7,7 +7,6 @@ public class PetHouseDatabase implements Serializable {
 
     @Serial
     private static final long serialVersionUID = 1L;
-
     private Map<String, PetHouse> petHouses;
 
     public PetHouseDatabase() {
@@ -20,6 +19,13 @@ public class PetHouseDatabase implements Serializable {
 
     public PetHouse getPetHouse(String name) {
         return petHouses.get(name);
+    }
+
+    public void removePetHouse(String name) {
+        petHouses.remove(name);
+    }
+    public int getPetHouseCount() {
+        return petHouses.size();
     }
 
 }

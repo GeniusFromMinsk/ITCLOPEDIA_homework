@@ -1,14 +1,16 @@
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 public class PetHouse implements Serializable {
 
+    @Serial
     private static final long serialVersionUID = 1L;
 
     private List<Cat> cats;
-    private final String address;
-    private final int year;
+    private String address;
+    private int year;
 
     public PetHouse(String address, int foundationYear) {
         this.address = address;
@@ -34,6 +36,14 @@ public class PetHouse implements Serializable {
 
     public int getFoundationYear() {
         return year;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setYear(int year) {
+        this.year = year;
     }
 
     public Cat findCatByName(String catName) {
